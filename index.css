@@ -1,0 +1,83 @@
+/***************** Priority Classes ******************/
+
+
+.high-priority {
+	background-color:rgb(220,118,129);
+	color: white;
+}
+
+.medium-priority {
+	background-color: rgb(248,247,160);
+	color white;
+}
+
+.low-priority {
+	background-color: rgb(177,208,135);
+	color: white
+}
+
+/***************** Styling ******************/
+
+
+body{
+	width: 90%;
+	margin-left: 5%;
+	padding: 20px 10px 20px 10px;
+	font-family: Fjalla One;
+}
+
+h2 {
+	color: rgb(135,177,208);
+}
+
+#btn-add {
+	background-color: rgb(135,177,208);
+	float: right;
+
+}
+
+#btn-delete {
+	float: right;
+	background-color: rgba(229,0,68, .6);
+}
+
+.input-field {
+	width: 50%;
+}
+
+.tasksTable {
+	border: 4px solid rgb(198,220,219);
+	padding: 10px 10px 10px 10px;
+	margin-top: 2%;
+	margin-bottom: 10%;
+	height: 100%;
+}
+
+.priority-selector {
+	width: 50%;
+}
+
+.orderby {
+	margin-top: 10%;
+	width: 20%;
+	float: right;
+
+}
+
+th {
+	background-color: rgba(198,220,219, .3);
+	color: rgb(135,177,208);
+	font-size: 2em;
+
+}
+
+td {
+	border-bottom: 1px solid rgb(198,220,219);
+	margin-left: 20px;
+}
+
+
+
+
+
+

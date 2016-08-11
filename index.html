@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app= "todoApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css">
+    <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <title>Simple | Todo</title>
+  </head>
+  
+  <body class="z-depth-4" ng-controller="todoCtrl">
+
+  <h2>You have {{getTotalTasks()}} tasks on your To Do List!</h2>
+  
+
+  <form>
+
+    <div class="name-input input-field">
+      <input type="text" ng-model="task.inputTaskText" placeholder="Add New Task...">
+    </div>
+    <div class="note-input input-field">
+      <input type="text" ng-model="task.inputNoteText" placeholder="Notes...">
+    </div>
+
+      <label>Priortiy:</label>
+      <select id="selector" class="browser-default priority-selector" ng-model= "task.taskPriority">
+        <option value="" disabled selected>Set Priortiy</option>
+        <option value="1">High!</option>
+        <option value="2">Medium</option>
+        <option value="3">Low...</option>
+      </select>
+  
+    <button id="btn-add" class="btn waves-effect waves-ligh" type="submit" name="action" ng-click="addTask()">Add
+      <i class="large material-icons">note_add</i>
+    </button>
+  
+  </form>
+  
+    <div class="orderby">
+     <label>Order By: </label>
+        <select name= "orderByKey" class="browser-default" ng-model="orderByKey">
+          <option value= "name">Name</option>
+          <option value= "priority">Priority</option>
+        </select>
+    </div>
+
+    
+    <table class= "tasksTable">
+    <tr>
+      <th ng-click="order()">Task</a></th>
+      <th>Notes</th>
+      <th>Priority</th>
+      <th></th>
+    </tr>
+    <tr ng-repeat="task in tasks | orderBy: orderByKey : false">
+      <td> {{task.name}}</td>
+      <td> {{task.notes}}</td>
+      <td class= "priority-marker" 
+          ng-class="{'high-priority' : task.priority === 1, 
+          'medium-priority' : task.priority === 2, 
+          'low-priority' : task.priority === 3}"> 
+          {{task.priortiy}}</td>
+      <td>
+        <button id="btn-delete" class="btn waves-effect waves-ligh" type="submit" name="action" ng-click="deleteTask(task)">
+        <i class="medium material-icons">delete</i>
+        </button></td>
+      
+    </tr>
+  </table>
+
+
+
+  
+        
+ 
+    
+  <script src= "bower_components/angular/angular.js"></script>
+  <script src= "bower_components/jquery/dist/jquery.js"></script>
+  <script src= "index.js"></script>
+  </body>
+  
+
+
+  <footer>
+  <p>© 2016 Copyright Michele Kempinsky</p>
+  </footer>
+ 
+</html>
