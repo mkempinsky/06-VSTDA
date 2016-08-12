@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="bower_components/sweetalert/dist/sweetalert.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.css">
+
     <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="index.css" />
     <title>Simple | Todo</title>
@@ -16,8 +18,7 @@
   <h2>You have {{getTotalTasks()}} tasks on your To Do List!</h2>
   
 
-  <form>
-
+  <form id= "userForm">
     <div class="name-input input-field">
       <input type="text" ng-model="task.inputTaskText" placeholder="Add New Task...">
     </div>
@@ -36,7 +37,6 @@
     <button id="btn-add" class="btn waves-effect waves-ligh" type="submit" name="action" ng-click="addTask()">Add
       <i class="large material-icons">note_add</i>
     </button>
-  
   </form>
   
     <div class="orderby">
@@ -58,10 +58,9 @@
     <tr ng-repeat="task in tasks | orderBy: orderByKey : false">
       <td> {{task.name}}</td>
       <td> {{task.notes}}</td>
-      <td class= "priority-marker" 
-          ng-class="{'high-priority' : task.priority === 1, 
+      <td  ng-class="{'high-priority' : task.priority === 1, 
           'medium-priority' : task.priority === 2, 
-          'low-priority' : task.priority === 3}"> 
+          'low-priority' : task.priority === 3}">
           {{task.priortiy}}</td>
       <td>
         <button id="btn-delete" class="btn waves-effect waves-ligh" type="submit" name="action" ng-click="deleteTask(task)">
@@ -73,19 +72,19 @@
 
 
 
-  
+ 
         
  
-    
+  <script src= "bower_components/sweetalert/dist/sweetalert.min.js"></script>  
   <script src= "bower_components/angular/angular.js"></script>
   <script src= "bower_components/jquery/dist/jquery.js"></script>
   <script src= "index.js"></script>
   </body>
   
 
-
+  
   <footer>
   <p>© 2016 Copyright Michele Kempinsky</p>
-  </footer>
- 
+  
+  <div>
 </html>

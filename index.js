@@ -21,7 +21,7 @@ todoApp.controller('todoCtrl', function ($scope, $http){
 
 			// alert user if task name is not entered
 			if ($scope.task.inputTaskText === undefined){
-				alert('Please enter a name for your new task.');
+				swal('Please enter a name for your new task.');
 				return; 
 			} 
 

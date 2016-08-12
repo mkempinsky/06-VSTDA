@@ -1,7 +1,7 @@
 /***************** Priority Classes ******************/
 
 
-.high-priority {
+.high-priority{
 	background-color:rgb(220,118,129);
 	color: white;
 }
@@ -19,9 +19,11 @@
 /***************** Styling ******************/
 
 
+
 body{
 	width: 90%;
 	margin-left: 5%;
+	margin-top: 40px;
 	padding: 20px 10px 20px 10px;
 	font-family: Fjalla One;
 }
@@ -53,6 +55,7 @@ h2 {
 	height: 100%;
 }
 
+
 .priority-selector {
 	width: 50%;
 }
@@ -77,7 +80,18 @@ td {
 }
 
 
+.sweetalert .confirm {
+	background-color: red;
+}
 
+footer{
+	background-color: rgba(0, 0, 0, .5);
+	position: static;
+	height: 40px;
+	color: white;
+	width: 100%;
+	text-align: center;
+}
 
 
 
